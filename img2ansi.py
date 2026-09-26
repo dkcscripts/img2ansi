@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-img2ansi.py — Convert image to ANSI 256-color block art.
+img2ansi.py - Convert image to ANSI 256-color block art.
 
 Uses ▄ (U+2584 LOWER HALF BLOCK) and ▀ (U+2580 UPPER HALF BLOCK) with
 256-color fg/bg to pack 2 rows per terminal line, doubling vertical resolution.
@@ -107,7 +107,7 @@ def image_to_ansi(
       ▄ (U+2584): bg = upper pixel color, fg = lower pixel color
       ▀ (U+2580): fg = upper pixel color, lower half = terminal background
       ▄ (no bg) : fg = lower pixel color, upper half = terminal background
-      ' '       : both pixels transparent — terminal background shows through
+      ' '       : both pixels transparent - terminal background shows through
 
     Partial alpha (0 < a < alpha_threshold) is composited against bg_color.
     Fully transparent pixels (a < alpha_threshold) let the terminal bg bleed in.
@@ -192,7 +192,7 @@ def main() -> None:
     try:
         img = Image.open(args.image)
     except FileNotFoundError:
-        print(f"Error: file not found — {args.image}", file=sys.stderr)
+        print(f"Error: file not found - {args.image}", file=sys.stderr)
         sys.exit(1)
     except Exception as exc:
         print(f"Error opening image: {exc}", file=sys.stderr)

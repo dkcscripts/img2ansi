@@ -47,7 +47,7 @@ python img2ansi.py sprite.png --bg 30 30 46 --alpha-threshold 64
 
 ## Image sizing
 
-The script uses the image **as-is** — one image pixel maps to one terminal character cell. For best results, resize your image to match your terminal width before converting:
+The script uses the image **as-is** - one image pixel maps to one terminal character cell. For best results, resize your image to match your terminal width before converting:
 
 ```python
 from PIL import Image
@@ -63,7 +63,7 @@ magick photo.png -resize 80x40! photo_small.png
 
 ## Transparency
 
-Transparent pixels emit a plain space with **no color codes**, so your actual terminal background shows through naturally — no need to match `--bg` to your terminal theme.
+Transparent pixels emit a plain space with **no color codes**, so your actual terminal background shows through naturally - no need to match `--bg` to your terminal theme.
 
 Semi-transparent pixels (feathered edges, drop shadows) are composited against `--bg` before color mapping.
 
@@ -72,7 +72,7 @@ Semi-transparent pixels (feathered edges, drop shadows) are composited against `
 | opaque | opaque | `▄` bg=upper, fg=lower |
 | opaque | transparent | `▀` fg=upper, terminal bg in lower half |
 | transparent | opaque | `▄` fg=lower, terminal bg in upper half |
-| transparent | transparent | ` ` space — terminal bg only |
+| transparent | transparent | ` ` space - terminal bg only |
 
 ## Output file
 
